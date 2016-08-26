@@ -1,0 +1,99 @@
+ 
+mainContainer {
+    flex: 1;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+backgroundImage {
+	flex: 1;
+	width: null;
+	height: null;
+}
+
+headerLogoText {
+	text-align: center;
+	margin-top: 50px;
+	color: white;
+	font-size: 40px;
+}
+
+logoImg {
+    align-items: center;
+    width: 150;
+    height: 150;
+    margin-top: 150;
+}
+
+bottomContainer { 
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 150;
+}
+
+navigatorStyles {
+	flex: 1;
+    width: null;
+    height: null;
+}
+
+mainContentContainer {
+	flex: 1;
+}
+
+mainHeaderContainer {
+	flex-direction: row;
+	height: 45;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+mainHeaderLeft {
+    flex: 1;
+    flex-direction: row;
+}
+
+mainHeaderRight {
+	flex: 1;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 15;
+}
+
+mainHeaderMenuIcon {
+	color: white;
+	font-size: 30;
+	margin-left: 15;
+	margin-top: 7;
+}
+
+mainHeaderHomeIcon {
+	color: white;
+	font-size: 25;
+	margin-top: 10;
+}
+
+mainHeaderNotificationIcon {
+	color: white;
+	font-size: 25;
+	margin-top: 10;
+	margin-left: 15;
+}
+
+mainHeaderTextIcon {
+	color: white;
+	font-size: 25;
+	margin-top: 10;
+	margin-left: 15;
+}
+
+mainHeaderMessageContainer { 
+	margin-right: 15;
+}
+
+mainHeaderLogo { 
+	color: white;
+	font-size: 25;
+	margin-top: 22; 
+	margin-left: 40;
+}
