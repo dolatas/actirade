@@ -48,7 +48,9 @@ class MainScreen extends Component {
         ref={(ref) => this._drawer = ref}
         type="displace"
         content={
-          <ControlPanel navigator={this.props.navigator} user={this.props.user} closeDrawer={this.closeDrawer} />
+          <ControlPanel navigator={this.props.navigator} 
+                        user={this.props.user} 
+                        closeDrawer={this.closeDrawer} />
         }
         acceptDoubleTap
         styles={{main: {shadowColor: '#000000', shadowOpacity: 0.1, shadowRadius: 15}}}
@@ -71,7 +73,7 @@ class MainScreen extends Component {
         panOpenMask={0.2}
         negotiatePan
         >
-          <MainHeader closeDrawer={this.closeDrawer} openDrawer={this.openDrawer} drawerOpen={this.state.drawerOpen} />
+          <MainHeader navigator={this.props.navigator} closeDrawer={this.closeDrawer} openDrawer={this.openDrawer} drawerOpen={this.state.drawerOpen} />
           <Text style={styles.mainContentContainer}> Main Content </Text>
       </Drawer>
     );

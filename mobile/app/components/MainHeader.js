@@ -40,15 +40,31 @@ class MainHeader extends Component {
         	<TouchableOpacity onPress={() => this._navigateToMain()}>
 	        	<Icon style={styles.mainHeaderHomeIcon} name="ios-home-outline" />
         	</TouchableOpacity>
-        	<TouchableOpacity onPress={() => this._navigateToMain()}>
+        	<TouchableOpacity onPress={() => this._navigateToNotificationScreen()}>
 	        	<Icon style={styles.mainHeaderNotificationIcon} name="ios-notifications-outline" />
         	</TouchableOpacity>
-	        <TouchableOpacity onPress={() => this._navigateToMain()}>
+	        <TouchableOpacity onPress={() => this._navigateToMessageScreen()}>
 	        	<Icon style={styles.mainHeaderTextIcon} name="ios-text-outline" />
         	</TouchableOpacity>
         </View>
       </View>
     );
+  }
+
+  _navigateToMain() {
+    this.props.navigator.jumpTo(this.props.navigator.getCurrentRoutes(0)[1])
+  }
+
+  _navigateToNotificationScreen() {
+    this.props.navigator.push({
+      ident: "NotificationScreen"
+    })
+  }
+
+  _navigateToMessageScreen() {
+    this.props.navigator.push({
+      ident: "MessageScreen"
+    })
   }
 
 static propTypes = {

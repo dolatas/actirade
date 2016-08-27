@@ -9,10 +9,13 @@ import React, { Component } from 'react';
 import { Navigator, Text, Image } from 'react-native';
 import LoaderScreen from '../screens/LoaderScreen';
 import LoginScreen from '../screens/LoginScreen';
+import LogoutScreen from '../screens/LogoutScreen';
 import MainScreen from '../screens/MainScreen';
 import NewsFeedScreen from '../screens/NewsFeedScreen';
 import ActivitiesScreen from '../screens/ActivitiesScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import MessageScreen from '../screens/MessageScreen';
+import NotificationScreen from '../screens/NotificationScreen';
 
 var styles = require('../css/style.js')
 
@@ -28,25 +31,21 @@ class AppNavigator extends Component {
     switch(route.ident) {
       case "LoaderScreen":
         return (
-          <Image source={require('../images/loginscreenbg.jpg')} style={styles.backgroundImage}>
+          <Image source={require('../images/loginScreenBg.jpg')} style={styles.backgroundImage}>
             <LoaderScreen {...globalNavigatorProps} />
           </Image>
         )
       case "LoginScreen":
         return (
-          <Image source={require('../images/loginscreenbg.jpg')} style={styles.backgroundImage}>
+          <Image source={require('../images/loginScreenBg.jpg')} style={styles.backgroundImage}>
             <LoginScreen {...globalNavigatorProps} />
           </Image>
         )
       case "MainScreen":
         return (
-          <Image source={require('../images/mainscreenbg.jpg')} style={styles.backgroundImage}>
+          <Image source={require('../images/mainScreenBg.jpg')} style={styles.backgroundImage}>
             <MainScreen {...globalNavigatorProps} user={route.user} />
           </Image>
-        )
-      case "NotificationScreen":
-        return (
-          <NotificationScreen {...globalNavigatorProps} />
         )
       case "NewsFeedScreen":
         return (
@@ -59,6 +58,22 @@ class AppNavigator extends Component {
       case "SettingsScreen":
         return (
           <SettingsScreen {...globalNavigatorProps} />
+        )
+      case "LogoutScreen":
+        return (
+          <LogoutScreen {...globalNavigatorProps} />
+        )
+      case "NotificationScreen":
+        return (
+          <Image source={require('../images/notificationScreenBg.jpg')} style={styles.backgroundImage}>
+            <NotificationScreen {...globalNavigatorProps} user={route.user} />
+          </Image>
+        )
+      case "MessageScreen":
+        return (
+          <Image source={require('../images/messageScreenBg.jpg')} style={styles.backgroundImage}>
+            <MessageScreen {...globalNavigatorProps} user={route.user} />
+          </Image>
         )
       default:
         return (
