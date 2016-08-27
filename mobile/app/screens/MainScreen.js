@@ -6,7 +6,7 @@
  */
 
 import React, { Component } from 'react';
-import { Text, View, PropTypes } from 'react-native';
+import { Text, View, PropTypes, Navigator } from 'react-native';
 import Drawer from 'react-native-drawer';
 
 import MainHeader from '../components/MainHeader';
@@ -48,7 +48,7 @@ class MainScreen extends Component {
         ref={(ref) => this._drawer = ref}
         type="displace"
         content={
-          <ControlPanel closeDrawer={this.closeDrawer} />
+          <ControlPanel navigator={this.props.navigator} user={this.props.user} closeDrawer={this.closeDrawer} />
         }
         acceptDoubleTap
         styles={{main: {shadowColor: '#000000', shadowOpacity: 0.1, shadowRadius: 15}}}

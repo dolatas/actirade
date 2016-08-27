@@ -10,6 +10,9 @@ import { Navigator, Text, Image } from 'react-native';
 import LoaderScreen from '../screens/LoaderScreen';
 import LoginScreen from '../screens/LoginScreen';
 import MainScreen from '../screens/MainScreen';
+import NewsFeedScreen from '../screens/NewsFeedScreen';
+import ActivitiesScreen from '../screens/ActivitiesScreen';
+import SettingsScreen from '../screens/SettingsScreen';
 
 var styles = require('../css/style.js')
 
@@ -38,12 +41,24 @@ class AppNavigator extends Component {
       case "MainScreen":
         return (
           <Image source={require('../images/mainscreenbg.jpg')} style={styles.backgroundImage}>
-            <MainScreen {...globalNavigatorProps} />
+            <MainScreen {...globalNavigatorProps} user={route.user} />
           </Image>
         )
       case "NotificationScreen":
         return (
           <NotificationScreen {...globalNavigatorProps} />
+        )
+      case "NewsFeedScreen":
+        return (
+          <NewsFeedScreen {...globalNavigatorProps} />
+        )
+      case "ActivitiesScreen":
+        return (
+          <ActivitiesScreen {...globalNavigatorProps} />
+        )
+      case "SettingsScreen":
+        return (
+          <SettingsScreen {...globalNavigatorProps} />
         )
       default:
         return (

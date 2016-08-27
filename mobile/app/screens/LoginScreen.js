@@ -7,7 +7,6 @@
 
 import React, { Component } from 'react';
 import { Text, View, Image, Navigator, TouchableOpacity, Platform } from 'react-native';
-
 import {FBLogin, FBLoginManager} from 'react-native-facebook-login';
 
 import FBLoginView from './FBLoginView';
