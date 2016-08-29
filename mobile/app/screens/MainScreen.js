@@ -11,6 +11,7 @@ import Drawer from 'react-native-drawer';
 
 import MainHeader from '../components/MainHeader';
 import ControlPanel from '../components/ControlPanel';
+import MainContent from '../components/MainContent';
 
 var styles = require('../css/style.js');
 
@@ -73,8 +74,8 @@ class MainScreen extends Component {
         panOpenMask={0.2}
         negotiatePan
         >
-          <MainHeader navigator={this.props.navigator} closeDrawer={this.closeDrawer} openDrawer={this.openDrawer} drawerOpen={this.state.drawerOpen} />
-          <Text style={styles.mainContentContainer}> Main Content </Text>
+          <MainHeader user={this.props.user} navigator={this.props.navigator} closeDrawer={this.closeDrawer} openDrawer={this.openDrawer} drawerOpen={this.state.drawerOpen} />
+          <MainContent user={this.props.user} />
       </Drawer>
     );
   }

@@ -103,18 +103,44 @@ fbUserPhoto {
 	margin-top: 45;
 	width: 110;
 	height: 110;
+	border-radius: 100%;
+	border-color: gray;
+	border-width: 3px;
 }
 
 fbUserInfo {
-	margin-top: 55;
+	margin-top: 80px;
 	color: white;
+	font-family: Courgette-Regular;
 }
 
-menuItemRow {
-	
+menuItemList {
+	margin-top: 60px;
+	height: 150px;
 }
 
 menuItemTitle {
 	color: white;
 	text-align: center;
+	font-family: Courgette-Regular;
+	font-size: 20px;
+}
+
+mainContentBottomIcons {
+	flex-direction: row;
+    justify-content: center;
+    margin-top: 200px;
+}
+
+acceptIcon {
+	color: #12B259;
+	font-size: 60px;
+	text-align: center;
+}
+
+declineIcon {
+	color: #FF4D5B;
+	font-size: 60px;
+	text-align: center;
+	margin-left: 30px;
 }

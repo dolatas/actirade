@@ -37,7 +37,7 @@ class ControlPanel extends Component {
       <View>
         <UserPhoto user={this.props.user} />
         <UserInfo user={this.props.user} />
-        <ListView style={{marginTop: 10}} 
+        <ListView style={styles.menuItemList} 
                   dataSource={this.state.menuDataSource} 
                   renderRow={ (menuItem) => {return this._renderMenuItemRow(menuItem) }}>
         </ListView>

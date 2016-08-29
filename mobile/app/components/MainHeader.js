@@ -63,7 +63,8 @@ class MainHeader extends Component {
 
   _navigateToMessageScreen() {
     this.props.navigator.push({
-      ident: "MessageScreen"
+      ident: "MessageScreen",
+      user: this.props.user
     })
   }
 
