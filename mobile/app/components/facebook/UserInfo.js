@@ -23,7 +23,7 @@ class UserInfo extends Component {
   componentWillMount() {
     var _this = this;
     var user = this.props.user;
-    var api = `https://graph.facebook.com/v2.3/${user.userId}?fields=name,email&access_token=${user.token}`;
+    var api = `https://graph.facebook.com/v2.3/${user.userId}?fields=name,email,birthday,gender&access_token=${user.token}`;
 
     fetch(api)
       .then((response) => response.json())
@@ -31,17 +31,31 @@ class UserInfo extends Component {
         _this.setState({
           info : {
             name : responseData.name,
+            birthday : responseData.birthday,
+            gender : responseData.gender,
           },
         });
       })
       .done();
   }
+
+  age(birthday) {
+    if ( birthday != null ) {
+      let birthdayParts = birthday.split("/");
+      let fbDate = new Date(birthdayParts[2], birthdayParts[0] - 1, birthdayParts[1]);
+      let ageDifMs = Date.now() - fbDate.getTime();
+      let ageDate = new Date(ageDifMs);
+      let age = Math.abs(ageDate.getUTCFullYear() - 1970);
+      return age;
+    }
+  }
   
   render() {
     let info = this.state.info;
+    let age = this.age(info && info.birthday);
     return (
       <View style={styles.mainContainer}>
-        <Text style={styles.fbUserInfo}>{ info && info.name }</Text>
+        <Text style={styles.fbUserInfo}>{ info && info.name }, { age }</Text>
       </View>
     );
   }

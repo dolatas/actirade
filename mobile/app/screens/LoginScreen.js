@@ -40,7 +40,7 @@ class LoginScreen extends Component {
             buttonView={<FBLoginView />}
             ref={(fbLogin) => { this.fbLogin = fbLogin }}
             loginBehavior={LoginBehavior[Platform.OS]}
-            permissions={["email","user_friends"]}
+            permissions={["email","user_friends","user_birthday"]}
             onLogin={function(data){
               console.log("Logged in!");
               console.log(data);
